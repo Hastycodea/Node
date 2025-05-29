@@ -5,7 +5,7 @@ const getRecordForWorkout = (workoutId) => {
     const record = Record.getRecordForWorkout(workoutId);
     return record;
   } catch (error) {
-    throw error;
+    throw(error);
   }
 };
 

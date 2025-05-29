@@ -4,13 +4,12 @@ const getRecordForWorkout = (workoutId) => {
   try {
     const record = DB.records.filter((record) => record.workout === workoutId);
 
-    if (!record) {
+    if (record.length === 0) {
       throw {
         status: 400,
-        message: `Can't find workout with the id '${workoutId}'`,
+        message: `Can't find workout with the id '${workoutId}'`
       };
     }
-
     return record;
   } catch (error) {
     throw { status: 500, message: error };
